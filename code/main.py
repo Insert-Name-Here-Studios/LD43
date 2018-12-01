@@ -24,10 +24,10 @@ def runGame(width, height, fps, startingScene, title='DEFAULT TITLE'):
 			elif event.type == pygame.VIDEORESIZE:
 
 
-			if quit_attempt:
-				activeScene.terminate()
-			else:
-				filteredEvents.append(event)
+		if quit_attempt:
+			activeScene.terminate()
+		else:
+			filteredEvents.append(event)
 
 		activeScene.processInput(filteredEvents, pressed_keys)
 		activeScene.update()
