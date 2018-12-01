@@ -1,6 +1,7 @@
 from scenes.scenebase import sceneBase
-from scenes.utils import scrolling_text
+from scenes.utils.scrolling_text import DynamicText
 from scenes.utils.button import button
+from scenes.utils.textbox import TextBox
 from scenes.day1 import day1
 import pygame
 
@@ -12,7 +13,9 @@ class TitleScene(sceneBase):
 		self.delay = 1000
 		self.titletext = 'TITLE (TODO: CREATE TITLE)'
 		self.title = self.font.render(self.titletext, False, (0, 0, 0))
-		self.startbutton = button(400, 100, 0, 0, '../../art/startmenu/start button.png')
+		self.startbutton = button(400, 100, 0, 0, 'art/startmenu/start button.png')
+		
+		self.tb = TextBox(DynamicText(self.tb_font, 'YEEET', (55, 76), (255, 0, 255)), 'art/startmenu/textbox.png', 500)
 
 
 	def update(self):
