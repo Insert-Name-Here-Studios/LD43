@@ -1,5 +1,5 @@
 import pygame
-import titlescene
+from scenes import titlescene
 def runGame(width, height, fps, startingScene, title='DEFAULT TITLE'):
 	pygame.init()
 	screenDims = (width, height)
@@ -21,13 +21,13 @@ def runGame(width, height, fps, startingScene, title='DEFAULT TITLE'):
 				alt_pressed = pressed_keys[pygame.K_LALT] or pressed_keys[pygame.K_RALT]
 				if event.key == pygame.K_F4 and alt_pressed:
 					quit_attempt = True
-			elif event.type == pygame.VIDEORESIZE:
+			# TODO make window resizable elif event.type == pygame.VIDEORESIZE:
 
 
 			if quit_attempt:
-					activeScene.terminate()
+				activeScene.terminate()
 			else:
-					filteredEvents.append(event)
+				filteredEvents.append(event)
 
 		activeScene.processInput(filteredEvents, pressed_keys)
 		activeScene.update()
@@ -37,4 +37,4 @@ def runGame(width, height, fps, startingScene, title='DEFAULT TITLE'):
 
 		pygame.display.flip()
 		clock.tick(fps)
-runGame(720, 1080, 60, titlescene.TitleScene(), 'Game')
+runGame(1080, 640, 60, titlescene.TitleScene(), 'Game')

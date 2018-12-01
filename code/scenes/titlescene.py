@@ -1,8 +1,8 @@
-import scenebase
-sb = scenebase.sceneBase()
-class TitleScene(sb):
+from scenebase import sceneBase
+
+class TitleScene(sceneBase):
 	def __init__(self):
-		sb.__init__(self)
+		sceneBase.__init__(self)
 
 	def update(self):
 		pass
@@ -11,4 +11,4 @@ class TitleScene(sb):
 		pass
 
 	def render(self, screen):
-		screen.fill((0, 0, 0))
+		screen.fill((255, 0, 0))
