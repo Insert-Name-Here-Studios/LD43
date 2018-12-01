@@ -17,7 +17,7 @@ class TitleScene(sceneBase):
 		self.title = self.font.render(self.titletext, False, (0, 0, 0))
 		self.startbutton = button(400, 100, 0, 0, 'art/button.png')
 
-		self.tb = TextBox(DynamicText(self.font, ['YEEET', 'No uuuuuuuu'], (55, 76), (255, 0, 255)), 'art\dtb.png', 5, 500, 100)
+		#self.tb = TextBox(DynamicText(self.font, ['YEEET', 'No uuuuuuuu'], (55, 76), (255, 0, 255)), 'art\dtb.png', 5, 500, 100)
 
 
 	def update(self):
