@@ -3,12 +3,9 @@ import pygame
 class button(pygame.sprite.Sprite):
 	def __init__(self, width, height, x, y, path='', color=None):
 		pygame.sprite.Sprite.__init__(self)
-
 		if len(path) > 0:
-			try:
-				self.img = pygame.image.load(path)
-			except:
-				print("Couldn't load file!")
+			self.img = pygame.image.load(path)
+
 		else:
 			self.img = pygame.Surface([width, height])
 			self.img.fill(color)
