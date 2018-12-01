@@ -2,14 +2,12 @@ import pygame
 
 def text_generator(texts):
 	for text in texts:
-		lines = text.split('^')
-		for line in lines:
-			tmp = ''
-			for letter in line:
-				tmp += letter
-				# don't pause for spaces
-				if letter != ' ':
-					yield tmp
+		tmp = ''
+		for letter in text:
+			tmp += letter
+			# don't pause for spaces
+			if letter != ' ':
+				yield tmp
 # a simple class that uses the generator
 # and can tell if it is done
 class DynamicText(object):
@@ -26,11 +24,12 @@ class DynamicText(object):
 
 
     def reset(self):
-        self._gen = text_generator(self.text)
-        self.done = False
-        self.update()
+		self._gen = text_generator(self.text)
+		self.done = False
+		self.update()
 
     def update(self):
+
         if not self.done:
             try: self.rendered = self.font.render(next(self._gen), True, self.color)
             except StopIteration:
@@ -38,4 +37,5 @@ class DynamicText(object):
                 if self.autoreset: self.reset()
 
     def draw(self, screen):
-        screen.blit(self.rendered, self.pos)
+		
+		screen.blit(self.rendered, self.pos)
