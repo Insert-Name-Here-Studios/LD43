@@ -5,13 +5,13 @@ class sceneBase:
 		self.next = self
 
 	def processInput(self, events, pressed_keys):
-		print('Not overridden in chile class!')
+		print('Not overridden in child class!')
 
 	def update(self):
-		print('Not overridden in chile class!')
+		print('Not overridden in child class!')
 
 	def render(self, screen):
-		print('Not overridden in chile class!')
+		print('Not overridden in child class!')
 
 	def switchScene(self, next_scene):
 		self.next = next_scene
