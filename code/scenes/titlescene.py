@@ -1,5 +1,5 @@
-from scenebase import sceneBase
-from utils import scrolling_text
+from scenes.scenebase import sceneBase
+from scenes.utils import scrolling_text
 import pygame
 
 class TitleScene(sceneBase):
