@@ -1,3 +1,4 @@
+import pygame
 class sceneBase:
 	def __init__(self):
 		pygame.font.init()

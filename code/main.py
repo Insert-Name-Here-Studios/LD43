@@ -1,3 +1,5 @@
+import pygame
+import titlescene
 def runGame(width, height, fps, startingScene, title='DEFAULT TITLE'):
 	pygame.init()
 	screenDims = (width, height)
@@ -35,3 +37,4 @@ def runGame(width, height, fps, startingScene, title='DEFAULT TITLE'):
 
 		pygame.display.flip()
 		clock.tick(fps)
+runGame(720, 1080, 60, titlescene.TitleScene(), 'Game')
