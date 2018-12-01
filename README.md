@@ -1,1 +1,1 @@
-# LD43
+A submission to LD43
