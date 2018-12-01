@@ -11,4 +11,4 @@ class day1(sceneBase):
 		pass
 
 	def render(self, screen):
-		screen.fill(255, 255, 0)
+		screen.fill((255, 255, 0))

@@ -1,5 +1,7 @@
 import pygame
+import os
 from scenes import titlescene
+print(os.getcwd())
 def runGame(width, height, fps, startingScene, title='DEFAULT TITLE'):
 	pygame.init()
 	screenDims = (width, height)
@@ -21,8 +23,8 @@ def runGame(width, height, fps, startingScene, title='DEFAULT TITLE'):
 				alt_pressed = pressed_keys[pygame.K_LALT] or pressed_keys[pygame.K_RALT]
 				if event.key == pygame.K_F4 and alt_pressed:
 					quit_attempt = True
-			# TODO make window resizable elif event.type == pygame.VIDEORESIZE:
-
+			#elif event.type == pygame.VIDEORESIZE:
+				#screen = pygame.transform.smoothscale(screen, event.size)
 
 			if quit_attempt:
 				activeScene.terminate()

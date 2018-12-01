@@ -3,6 +3,7 @@ import pygame
 class button(pygame.sprite.Sprite):
 	def __init__(self, width, height, x, y, path='', color=None):
 		pygame.sprite.Sprite.__init__(self)
+		self.pos = (x, y)
 		if len(path) > 0:
 			self.img = pygame.image.load(path)
 
@@ -20,6 +21,8 @@ class button(pygame.sprite.Sprite):
 		#print(self.rect)
 
 	def update(self):
+		self.rect.x = self.pos[0]
+		self.rect.y = self.pos[1]
 		mouse_pos = pygame.Rect((pygame.mouse.get_pos()), (1, 1))
 		#print(self.rect.x)
 		if self.rect.colliderect(mouse_pos):
@@ -30,8 +33,6 @@ class button(pygame.sprite.Sprite):
 				#print('left clikced!')
 			else:
 				self.Lclicked = False
-
-
 
 
 
